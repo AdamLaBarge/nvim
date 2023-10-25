@@ -32,6 +32,9 @@ return require("packer").startup(function(use)
 			require("startup").setup()
 		end,
 	})
+    --Status Line
+    use("vim-airline/vim-airline")
+    use("vim-airline/vim-airline-themes")
 	--NVIM Tree File Explorer
 	use("nvim-tree/nvim-tree.lua")
 	--Telescope and Treesitter Stuff
