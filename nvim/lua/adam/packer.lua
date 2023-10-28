@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+    --Other plugins and stuff (from theprimeagen)
 	use("nvim-treesitter/playground")
 	use("theprimeagen/harpoon")
 	use("theprimeagen/refactoring.nvim")
