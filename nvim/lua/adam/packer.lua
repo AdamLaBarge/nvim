@@ -32,12 +32,21 @@ return require("packer").startup(function(use)
 			require("startup").setup()
 		end,
 	})
-    --Status Line
-    use("vim-airline/vim-airline")
-    use("vim-airline/vim-airline-themes")
+	--Status Line
+	use("vim-airline/vim-airline")
+	use("vim-airline/vim-airline-themes")
 	--NVIM Tree File Explorer
 	use("nvim-tree/nvim-tree.lua")
 	--Telescope and Treesitter Stuff
+	--Lightspeed
+	use("ggandor/lightspeed.nvim")
+	--Lsp Lines
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
@@ -51,7 +60,6 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
-    --Other plugins and stuff (from theprimeagen)
 	use("nvim-treesitter/playground")
 	use("theprimeagen/harpoon")
 	use("theprimeagen/refactoring.nvim")
