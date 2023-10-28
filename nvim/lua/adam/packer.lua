@@ -47,6 +47,9 @@ return require("packer").startup(function(use)
 			require("lsp_lines").setup()
 		end,
 	})
+    --Vim Commentary 
+    use("tpope/vim-commentary")
+    --Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
