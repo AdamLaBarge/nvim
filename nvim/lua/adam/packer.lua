@@ -32,14 +32,15 @@ return require("packer").startup(function(use)
 			require("startup").setup()
 		end,
 	})
+	
 	--Status Line
 	use("vim-airline/vim-airline")
 	use("vim-airline/vim-airline-themes")
 	--NVIM Tree File Explorer
 	use("nvim-tree/nvim-tree.lua")
+    --Light Speed
+    use("ggandor/lightspeed.nvim")
 	--Telescope and Treesitter Stuff
-	--Lightspeed
-	use("ggandor/lightspeed.nvim")
 	--Lsp Lines
 	use({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -47,9 +48,9 @@ return require("packer").startup(function(use)
 			require("lsp_lines").setup()
 		end,
 	})
-    --Vim Commentary 
-    use("tpope/vim-commentary")
-    --Telescope
+	--Vim Commentary
+	use("tpope/vim-commentary")
+	--Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
