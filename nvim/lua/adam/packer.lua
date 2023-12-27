@@ -2,7 +2,6 @@
 
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd("packer.nvim")
-
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
@@ -32,22 +31,20 @@ return require("packer").startup(function(use)
 			require("startup").setup()
 		end,
 	})
-	
+	--Focus Mode
+	use("nvim-focus/focus.nvim")
+	--Zen Mode
+	use("folke/zen-mode.nvim")
+	--Indent Lines
+	use("lukas-reineke/indent-blankline.nvim")
 	--Status Line
 	use("vim-airline/vim-airline")
 	use("vim-airline/vim-airline-themes")
 	--NVIM Tree File Explorer
 	use("nvim-tree/nvim-tree.lua")
-    --Light Speed
-    use("ggandor/lightspeed.nvim")
+	--Light Speed
+	use("ggandor/lightspeed.nvim")
 	--Telescope and Treesitter Stuff
-	--Lsp Lines
-	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	})
 	--Vim Commentary
 	use("tpope/vim-commentary")
 	--Telescope
@@ -64,12 +61,19 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+	use("tpope/vim-surround")
 	use("nvim-treesitter/playground")
 	use("theprimeagen/harpoon")
 	use("theprimeagen/refactoring.nvim")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("nvim-treesitter/nvim-treesitter-context")
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
